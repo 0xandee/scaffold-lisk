@@ -8,6 +8,7 @@ import {
   Bars3Icon,
   BugAntIcon,
   ClipboardDocumentListIcon,
+  CurrencyDollarIcon,
   HomeIcon,
   SparklesIcon,
 } from "@heroicons/react/24/outline";
@@ -36,6 +37,11 @@ export const menuLinks: HeaderMenuLink[] = [
     label: "Events",
     href: "/events",
     icon: <ClipboardDocumentListIcon className="h-4 w-4" />,
+  },
+  {
+    label: "Oracle",
+    href: "/oracle",
+    icon: <CurrencyDollarIcon className="h-4 w-4" />,
   },
   {
     label: "Gasless",
