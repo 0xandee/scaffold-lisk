@@ -2,16 +2,12 @@
 
 import { useState } from "react";
 import { getContract, prepareContractCall, sendTransaction } from "thirdweb";
-import { createThirdwebClient } from "thirdweb";
 import { useActiveAccount } from "thirdweb/react";
 import { liskSepoliaThirdweb } from "~~/chains";
 import deployedContracts from "~~/contracts/deployedContracts";
 import { useScaffoldContractRead } from "~~/hooks/scaffold-eth";
+import { thirdwebClient } from "~~/services/web3/thirdwebConfig";
 import { notification } from "~~/utils/scaffold-eth";
-
-const client = createThirdwebClient({
-  clientId: process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID!,
-});
 
 export const SmartWalletDemo = () => {
   const [mintToAddress, setMintToAddress] = useState("");
@@ -45,7 +41,7 @@ export const SmartWalletDemo = () => {
     try {
       // Create thirdweb contract instance
       const nftContract = getContract({
-        client,
+        client: thirdwebClient,
         chain: liskSepoliaThirdweb,
         address: nftAddress,
       });

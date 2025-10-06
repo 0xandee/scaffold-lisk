@@ -1,14 +1,10 @@
 "use client";
 
 import type { NextPage } from "next";
-import { createThirdwebClient } from "thirdweb";
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
 import { liskSepoliaThirdweb } from "~~/chains";
 import { SmartWalletDemo } from "~~/components/example-ui/SmartWalletDemo";
-
-const client = createThirdwebClient({
-  clientId: process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID!,
-});
+import { thirdwebClient } from "~~/services/web3/thirdwebConfig";
 
 const Gasless: NextPage = () => {
   const account = useActiveAccount();
@@ -22,7 +18,7 @@ const Gasless: NextPage = () => {
         {/* Smart Wallet Connect Button */}
         <div className="flex justify-center mb-8">
           <ConnectButton
-            client={client}
+            client={thirdwebClient}
             chain={liskSepoliaThirdweb}
             accountAbstraction={{
               chain: liskSepoliaThirdweb,
