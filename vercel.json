@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "cd packages/nextjs && yarn build",
   "devCommand": "cd packages/nextjs && yarn dev",
-  "installCommand": "yarn install --mode=skip-build",
+  "installCommand": "echo 'enableScripts: false' >> .yarnrc.yml && yarn install && git checkout .yarnrc.yml",
   "framework": null,
   "outputDirectory": "packages/nextjs/.next"
 }
