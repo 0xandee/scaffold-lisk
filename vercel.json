@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "cd packages/nextjs && yarn build",
   "devCommand": "cd packages/nextjs && yarn dev",
-  "installCommand": "bash vercel-install.sh",
+  "installCommand": "yarn workspaces focus @se-2/nextjs",
   "framework": null,
   "outputDirectory": "packages/nextjs/.next"
 }
